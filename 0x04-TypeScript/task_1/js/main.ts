@@ -27,6 +27,16 @@ const director1: Directors = {
     location: 'London',
     fullTimeEmployee: true,
     numberOfReports: 17,
-  };
+};
   
 // console.log(director1);
+
+interface printTeacherFunction { 
+    (firstName: String, lastName: String): string,
+};
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName.slice(0, 1)}. ${lastName}`
+};
+
+// console.log(printTeacher("Zidane", "ZAOUI"));
