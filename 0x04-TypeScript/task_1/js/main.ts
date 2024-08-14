@@ -19,7 +19,7 @@ const teacher3: Teacher = {
 
 interface Directors extends Teacher {
     numberOfReports: number,
-}
+};
 
 const director1: Directors = {
     firstName: 'John',
@@ -40,3 +40,33 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 };
 
 // console.log(printTeacher("Zidane", "ZAOUI"));
+interface studentConstructor {
+    new (firstName: String, lastName: String): Student,
+};
+
+interface Student {
+    workOnHomework(): string;
+    displayName(): string; 
+};
+
+class StudentClass implements Student {
+
+    firstName: String;
+    lastName: String;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    workOnHomework(): string {
+        return 'Currently working';
+    }
+
+    displayName(): string {
+        return `${this.firstName}`
+    }
+};
+
+// const zidane = new StudentClass("Zidane", "ZAOUI");
+// console.log(zidane.firstName, zidane.lastName, zidane.workOnHomework(), zidane.displayName())
